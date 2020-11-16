@@ -28,6 +28,13 @@ server.get('/', (req, res) => {
     res.json(`Welcome to relationships-in-mongodb`);
 })
 
+// routes
+const usersRouter = require('./routes/users');
+const identifiersRouter = require('./routes/identifiers');
+server.use('/users', usersRouter);
+server.use('/identifiers', identifiersRouter);
+
+
 
 const port = process.env.PORT || 3000;
 
