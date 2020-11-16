@@ -31,10 +31,12 @@ server.get('/', (req, res) => {
 // routes
 const usersRouter = require('./routes/users');
 const identifiersRouter = require('./routes/identifiers');
+const personsRouter = require('./routes/persons');
+const libraryCardsRouter = require('./routes/libraryCards');
 server.use('/users', usersRouter);
 server.use('/identifiers', identifiersRouter);
-
-
+server.use('/persons', personsRouter);
+server.use('/libraryCards', libraryCardsRouter);
 
 const port = process.env.PORT || 3000;
 
